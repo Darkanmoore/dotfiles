@@ -9,6 +9,7 @@ zstyle ':completion:*' list-colors "=(#b) #([0-9]#)*=31=36"
 
 echo ''
 setopt VI
+export TERM=xterm-256color
 setopt NO_BEEP
 alias cpv="rsync -poghb --backup-dir=/tmp/rsync -e /dev/null --progress --" # Copy with progress bar && rsync <3
 export EDITOR=vim
