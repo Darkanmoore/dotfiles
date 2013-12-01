@@ -1,5 +1,6 @@
 # A config founded on Arch Forum (<3), modded for openbox and added some config
 
+xftfont envypn:size=9
 background yes
 cpu_avg_samples 5
 net_avg_samples 5
