@@ -23,6 +23,14 @@ set hlsearch
 set ignorecase
 set showmode
 
+"Setting some useful shortcut
+
+map <c-f> /     "Ctrl-f → Search
+map <c-c> "+y   "Ctrl-c → Copy
+map <c-x> "+x   "Ctrl-x → Cut
+map <c-v> "+gP  "Ctrl-v → Paste
+map <c-s> :w    "Ctrl-s → Save
+
 " Set extra options when running in GUI mode
 if has("gui_running")
     set guioptions-=T
