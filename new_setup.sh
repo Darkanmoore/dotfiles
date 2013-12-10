@@ -32,7 +32,7 @@ fi
 
 cd $HOME/dotfiles
 
-if [[ -f $HOME/.config ]]; then
+if [[ -d $HOME/.config ]]; then
 	mv $HOME/dotfiles/.config/* $HOME/.config
 else
 	mkdir -p $HOME/.config && mv $HOME/dotfiles/.config $HOME/.config
@@ -57,7 +57,7 @@ echo "Updating.."; sleep 3
 sudo pacman -Syy
 sleep 4; clear
 
-sudo pacman -Sy firefox vlc openbox obconf yaourt networkmanager newtork-manager-applet pcmanfm feh evince gnome-alsamixer vim deluge xscreensaver lxappearance htop 
+sudo pacman -Sy i3 firefox vlc openbox obconf yaourt networkmanager newtork-manager-applet pcmanfm feh evince gnome-alsamixer vim deluge xscreensaver lxappearance htop 
 yaourt -Sy obmenu-generator xfce4-theme-greybird volti termite compton-git psmouse-elantech
 clear
 
