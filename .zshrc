@@ -15,6 +15,11 @@ setopt correctall
 
 export TERM=xterm-256color
 export EDITOR=vim
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=setting'
+export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel' 
+
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
