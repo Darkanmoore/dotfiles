@@ -7,7 +7,6 @@ zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 zstyle ':completion:*' file-sort modification reverse
 autoload -U colors && colors
 zstyle ':completion:*' list-colors "=(#b) #([0-9]#)*=31=36"
-#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 setopt VI
 setopt NO_BEEP
@@ -18,15 +17,23 @@ export EDITOR=vim
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=setting'
 export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel' 
 
+# Bindkey for Fn in zsh shell
+
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
+
+# ZSH Options
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=200
 
+# How prompt is shown on term-emulators
+
 PROMPT="%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg_no_bold[cyan]%}%1~ %{$reset_color%}%# "
 RPROMPT="[%{$fg[green]%}%*%{$reset_color%}][%{$fg_no_bold[yellow]%}%?%{$reset_color%}]"
+
+# Some usefull alias
 
 alias cpv="rsync -poghb --backup-dir=/tmp/rsync -e /dev/null --progress --" # Copy with progress bar && rsync <3
 alias ls='ls --classify --tabsize=0 --literal --color=auto --human-readable'
@@ -48,4 +55,5 @@ alias free='free -h'
 alias x='startx'
 alias grep='grep --color=auto'
 alias pacman='sudo pacman'
+alias dmesg='dmesg -H'
 
