@@ -1,85 +1,28 @@
-# A config founded on Arch Forum (<3), modded for openbox and added some config
-
-xftfont envypn:size=9
 background yes
-cpu_avg_samples 5
-net_avg_samples 5
+use_xft yes
+xftfont envypn:size=8
+xftalpha 0.8
 out_to_console no
-font 7x13
-own_window_transparent yes
-own_window_colour hotpink
-own_window_type desktop
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
-xftalpha 1.0
-update_interval 2
+update_interval 5.0
+total_run_times 0
+draw_shades no
+ 
+# Create own window instead of using desktop (required in nautilus)
 own_window yes
+ 
+# If own_window is yes, you may use type normal, desktop or override
 own_window_type override
+ 
+# Use pseudo transparency with own_window?
+own_window_transparent yes
 double_buffer yes
-minimum_size 5 5
-draw_shades yes
-draw_outline no
-draw_borders yes
-stippled_borders 0
-border_margin 10
-border_width 2
-default_color white
-default_shade_color black
-default_outline_color white
-alignment top_right
-gap_x 20
-gap_y 20
+#default_color fffffff
+#color1 grey
+alignment bottom_left
+gap_x 2
+gap_y 2
+#no_buffers yes
 use_spacer yes
-no_buffers yes
-uppercase no
-mpd_host localhost
-mpd_port 6600
-# stuff after 'TEXT' will be formatted on screen
+ 
 TEXT
-${color #ffffff}${time %A, %d %B %Y} ${alignr}${time %T}
-
-${color #FF0000}SYSTEM
-${color white}${hr 1}
-${color white}User  : ${color #ffffff}~Simone
-${color #FF0000}Kernel: ${color #CCCCCC}$kernel 
-${color #FF0000}Uptime: ${color #CCCCCC}$uptime
-${color #FF0000}CPU   : ${color #CCCCCC}$freq MHz   $cpu%  ${alignr}${acpitemp} C
-${color #FF0000}        ${cpugraph 15,210 ff0000 ff00ff}
-${color #FF0000}RAM   : ${color #CCCCCC}$memmax     $memperc%  ${membar 6}
-
-${color #FF0000}POWER
-${color white}${hr 1}
-${color #FF0000}AC Adapter: ${color #CCCCCC}$acpiacadapter
-${color #FF0000}Battery   : ${color #CCCCCC}$battery $battery_time
-
-${color #FF0000}DISK
-${color white}${hr 1}
-${color #FF0000}/     : ${color #CCCCCC}${fs_size /}    ${fs_used_perc /} % 
-${alignr}${fs_bar 6,100 /}
-${color #FF0000}/home : ${color #CCCCCC}${fs_size /home}    ${fs_used_perc /home} % 
-${alignr}${fs_bar 6,100 /home}
-
-${color #FF0000}PROCESSES
-${color white}${hr 1}
-${color #FF0000}Processes: ${color #CCCCCC}$processes  
-${color #FF0000}Running: ${color #CCCCCC}$running_processes
-
-${color #FF0000}Name             PID     CPU%   MEM%
-${color #ffffff}${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
-${color #ffffff}${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
-${color #ffffff}${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
-
-${color #ffffff}${top_mem name 1} ${top_mem pid 1} ${top_mem cpu 1} ${top_mem mem 1}
-${color #ffffff}${top_mem name 2} ${top_mem pid 2} ${top_mem cpu 2} ${top_mem mem 2}
-${color #ffffff}${top_mem name 3} ${top_mem pid 3} ${top_mem cpu 3} ${top_mem mem 3}
-
-${color #ffccaa}NETWORK
-${color white}${hr 1}
-${color #888888}Down: ${color #CCCCCC}${downspeed wlp7s0}kb/s${color #888888}${alignr}Total:${color #CCCCCC}${totaldown wlp7so}
-${color #888888}Up  : ${color #CCCCCC}${upspeed wlp7s0}kb/s${color #888888}${alignr}Total:${color #CCCCCC}${totalup wlan0}
-
-${color #ffccaa}NOW PLAYING
-${color white}${hr 1}
-${color #FFFF00}Artist: ${color #CCCCCC}$mpd_artist
-${color #00FFFF}Title : ${color #CCCCCC}${mpd_title 30}
-${color #2EFE2E}$mpd_bar
-${color #ffffff}$mpd_elapsed/$mpd_length ${alignc}$mpd_status ${alignr}$mpd_percent%
+${color #ffffff} CPU1 ${color #ffffff}${cpu cpu1}% ${cpubar 6,40 cpu1} ${freq cpu1}MHz ${color}| CPU2 ${color #ffffff}${cpu cpu2}% ${cpubar 6,40 cpu2} ${freq cpu2}MHz ${color #ffffff}| RAM ${color #ffffff}$memperc% ${membar 6,40} ${color}| / ${color1}${fs_used /}/${fs_size /} ${fs_bar 5,40 /} ${color} ${color}| /home ${color1}${fs_used /home}/${fs_size /home} ${fs_bar 5,40 /home} ${color} ${color #1E90FF}| Playing${color #99182C}►${color #FFFF00}$mpd_artist - ${color #00FFFF}${mpd_title 30} ${color #1E90FF}$mpd_elapsed/$mpd_length

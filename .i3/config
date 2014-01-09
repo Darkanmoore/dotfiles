@@ -26,13 +26,13 @@ new_window 1pixel
 new_float 1pixel
 
 # start a terminal
-bindsym $mod+Return exec termite -e tmux
+bindsym $mod+Return exec urxvt -e tmux
 
 # kill focused window
 bindsym $mod+Shift+q kill
 bindsym $mod+f exec firefox
-bindsym $mod+Shift+q exec i3lock
-bindsym $mod+t exec termite
+bindsym $mod+Shift+l exec xscreensaver-command -lock
+bindsym $mod+t exec urxvt
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ unmute
 bindsym XF86AudioLowerVolume exec amixer set Master 5%- unmute
 bindsym XF86AudioMute exec amixer set Master toggle
@@ -182,4 +182,5 @@ exec setxkbmap it
 exec volti
 exec sh /home/simone/.fehbg
 exec sudo mpd --kill && mpd 
-exec nm-applet
+exec wicd-client --tray
+exec conky
