@@ -56,4 +56,6 @@ alias x='startx'
 alias grep='grep --color=auto'
 alias pacman='sudo pacman'
 alias dmesg='dmesg -H'
+alias cower='cower -t ~/scripts --color=always'
+
 
