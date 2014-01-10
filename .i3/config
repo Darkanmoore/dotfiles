@@ -42,7 +42,7 @@ bindsym XF86AudioPrev exec ncmpcpp prev
 bindsym XF86AudioNext exec ncmpcpp next
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -b -fn 'xft:envypn:pixelsize=8' -nb '#191919' -nf '#9ac0cd' -sb '#191919' -sf '#bf3f34' -p 'run >> ' 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -137,6 +137,11 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+# autostart on workspace
+exec --no-startup-id i3-msg 'workspace 3 Media; exec mpd && exec urxvt -e ncmpcpp'
+exec --no-startup-id i3-msg 'workspace 4 Irc; exec urxvt -e weechat'
+exec --no-startup-id i3-msg 'workspace 1 Web; exec firefox'
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -180,7 +185,7 @@ bar {
 
 exec setxkbmap it
 exec volti
-exec sh /home/simone/.fehbg
+exec nitrogen --restore
 exec sudo mpd --kill && mpd 
 exec wicd-client --tray
 exec conky
