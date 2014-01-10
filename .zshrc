@@ -19,8 +19,9 @@ export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndF
 
 # Bindkey for Fn in zsh shell
 
-bindkey "^[[H" beginning-of-line
-bindkey "^[[F" end-of-line
+bindkey "^[[1~" beginning-of-line
+bindkey "^[[4~" end-of-line
+bindkey "^[[3~" delete-char
 
 # ZSH Options
 
