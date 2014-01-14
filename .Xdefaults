@@ -23,7 +23,7 @@ URxvt*keysym.End: \033[4~
 
 URxvt.keysym.Shift-Control-C : perl:clipboard:copy
 URxvt.keysym.Shift-Control-V : perl:clipboard:paste
-URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select
+URxvt.iso14755: False
 URxvt.url-select.launcher:  firefox
 URxvt.url-select.underline: true
 
